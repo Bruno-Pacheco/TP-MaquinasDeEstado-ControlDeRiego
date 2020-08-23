@@ -1,4 +1,3 @@
-# TP-MaquinasDeEstado-ControlDeRiego
-Trabajo Práctico para la materia Informática 2. UTN FRA
-
-### Memoria Descriptiva
+# Control de riego en una plantación
+#### Trabajo Práctico con Máquinas de Estado
+### Memoria descriptiva
