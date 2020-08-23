@@ -16,3 +16,14 @@ El sistema solo cuenta con dos estados en su funcionamiento **(regar / no regar)
 - Sensor de húmedad de la tierra: 0 si está húmeda / 1 si está seca.
 
 *Notar que los sensores valen 0 cuando deben inhabilitar el riego.*
+
+
+| Sagua  | Sluz  | Slluvia  | Shum  |   |
+| ------------ | ------------ | ------------ | ------------ | ------------ |
+| 0  | X  | X  | X  | NO RIEGO  |
+| X  | 0  | X  | X  | NO RIEGO  |
+| X  | X  | 0  | X  | NO RIEGO  |
+| X  | X  | X  | 0  | NO RIEGO  |
+| 1  | 1  | 1  | 1  | RIEGO  |
+
+## Máquina de estado
