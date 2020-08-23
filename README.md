@@ -27,3 +27,5 @@ El sistema solo cuenta con dos estados en su funcionamiento **(regar / no regar)
 | 1  | 1  | 1  | 1  | RIEGO  |
 
 ## Máquina de estado
+
+[![maquinadeestado](FMS.JPG "maquinadeestado")](http://https://github.com/Bruno-Pacheco/TP-MaquinasDeEstado-ControlDeRiego/blob/master/FMS.JPG?raw=true "maquinadeestado")
