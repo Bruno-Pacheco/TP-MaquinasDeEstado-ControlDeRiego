@@ -24,7 +24,7 @@ typedef struct {
 }lluv_t;
 
 typedef struct {
-}luz_set;
+}luz_t;
 
 conf_t inicio(void);    //abre el archivo de conf y carga las variables con los parametros
 estados_t friego_off (conf_t);
