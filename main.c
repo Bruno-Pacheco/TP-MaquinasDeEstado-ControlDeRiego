@@ -3,18 +3,13 @@
 int main()
 {
     conf_t config;
-    config = inicio ();         //abre config.conf y lo carga en config
-    estados_t estado = riego_off;
-    while (1){
-        switch (estado){
-            case riego_off:
-            estado = friego_off(config);
-            break;
-            case riego_on:
-            estado = friego_on(config);
-            break;
+    config = inicio();
 
-        }
+    estados_t estado = riego_off;   //estado inicial "riego apagado"
+    estados_t (*pfun[])(conf_t) = {friego_off,friego_on};//le cargo a mi puntero las posiciones de las dos funciones principales
+
+    while (1){
+        estado = (*pfun[estado])(config);
     }
     return 0;
 }
