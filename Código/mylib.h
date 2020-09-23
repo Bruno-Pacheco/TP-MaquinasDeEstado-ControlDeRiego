@@ -4,30 +4,35 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+typedef struct {
+    struct{
+        char humedad, humedad_set, deltaH;
+    } humedad_t;
+    struct{
+        char luzsolar, luzsolar_set, deltaLS;
+    }luzsolar_t;
+    struct{
+        unsigned int lluvia, lluvia_set;
+        char deltaLL;
+    }lluvia_t;
+} parametros_t;
+
+
 typedef enum{
-    riego_off,
-    riego_on
+    off,
+    on
 } estados_t;
 
-typedef struct {
-    char hum_set;
-    char lluv_set;
-    char luz_set;
-    /**el sensor de agua no estará en la configuración,
-    ya que no es un parámetro configurable por el usuario,*/
-}conf_t;
+parametros_t inicio (void);
+char * getkey (char *);
+char *getdelta (char *);
 
-typedef struct {
-}hum_t;
-
-typedef struct {
-}lluv_t;
-
-typedef struct {
-}luz_t;
-
-conf_t inicio(void);    //abre el archivo de conf y carga las variables con los parametros
 estados_t friego_off (conf_t);
 estados_t friego_on (conf_t);
+
+estados_t sensor_agua ();
+estados_t sensor_humedad (conf_t);
+estados_t sensor_lluvia (conf_t);
+estados_t sensor_luz (conf_t);
 
 #endif // MYLIB_H_INCLUDED
