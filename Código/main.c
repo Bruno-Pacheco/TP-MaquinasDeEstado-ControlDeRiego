@@ -2,14 +2,18 @@
 
 int main()
 {
-    conf_t config;
-    config = inicio();
+    parametros_t config = inicio();
 
-    estados_t estado = riego_off;   //estado inicial "riego apagado"
-    estados_t (*pfun[])(conf_t) = {friego_off,friego_on};//le cargo a mi puntero las posiciones de las dos funciones principales
+    estados_t estado = off;   //estado inicial "riego apagado"
+    estados_t (*pfun[])(parametros_t)={friego_off, friego_on};
+    printf("****CENTRAL DE RIEGO AUTOMATICO****\n\n");
 
-    while (1){
+    while (1)
+    {
         estado = (*pfun[estado])(config);
+        if (estado == 1){
+            printf("\n***aspersores prendidos***\n");
+        }else printf("\n***aspersores apagados***\n");
     }
     return 0;
 }
