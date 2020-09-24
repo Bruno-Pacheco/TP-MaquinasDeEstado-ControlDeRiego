@@ -81,9 +81,13 @@ estados_t friego_off (parametros_t config)
         luz = on; // hay poca luz solar, indica se puede regar
     } else luz = off;
     if ((agua*humedad*lluvia*luz)){     //si se cumplen todas las condiciones para el riego este producto vale 1
+        printf("***Asperores Prendidos***\n");
         return on;      //riego
     }
-    else return off;       //no riego
+    else{
+        printf("***Aspersores Apagados***\n");
+        return off;       //no riego
+    }
 }
 
 estados_t friego_on (parametros_t config)
@@ -103,9 +107,13 @@ estados_t friego_on (parametros_t config)
         luz = off; // hay demasiada luz solar, indica NO riego
     } else luz = on;
     if ((agua*humedad*lluvia*luz)){     //si se cumplen todas las condiciones para el riego este producto vale 1
+        printf("***Aspersores Prendidos***\n");
         return on;      //riego
     }
-    else return off;       //no riego
+    else{
+        printf("***Aspersores Apagados***\n");
+        return off;       //no riego
+    }
 }
 
 estados_t sensor_agua ()
