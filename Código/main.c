@@ -12,10 +12,10 @@ int main()
         switch(estado)
         {
             case off:
-                friego_off(config);
+                estado = friego_off(config);
                 break;
             case on:
-                friego_on(config);
+                estado = friego_on(config);
                 break;
         }
     }
