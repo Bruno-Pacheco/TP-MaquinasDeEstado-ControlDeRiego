@@ -13,7 +13,7 @@ parametros_t inicio ()
     }
 
     fgets(bf,30,conf);
-   // printf("%s", bf);
+   
     do{
         key=bf;
         if(*key != '#' && strlen(key)>=0)   //si no comienza con # o es un renglon vacío...
@@ -42,7 +42,6 @@ parametros_t inicio ()
             }   //end for
         }   //end if
         fgets(bf,30,conf);
-       // printf("%s", bf);
     }while(!feof(conf));    //end do
 
     return config;
@@ -52,7 +51,7 @@ char *getkey (char *key)
 {
     char i=0;
     while (*(key+i)!=' ')i++;   //recorro la palabra hasta el espacio
-    *(key+i)=0; //donde esta el espacio pongo un enter(/0)
+    *(key+i)=0; 	//donde esta el espacio pongo un enter(/0)
     return key+i+1;
 }
 
