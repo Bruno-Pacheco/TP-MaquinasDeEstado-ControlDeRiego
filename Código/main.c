@@ -5,10 +5,16 @@ int main()
     parametros_t config = inicio();
     estados_t estado = off;   //estado inicial "riego apagado"
 
+    /** Declarando un puntero a funciones
+    estados_t (*pfun[])(parametros_t)={friego_off, friego_on};*/
+	
     printf("****CENTRAL DE RIEGO AUTOMATICO****\n\n");
 
     while (1)
     {
+	/** Se puede reemplazar el switch por este renglón
+	estado = (*pfun[estado])(config);*/
+
         switch(estado)
         {
             case off:
